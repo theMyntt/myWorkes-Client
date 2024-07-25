@@ -1,0 +1,6 @@
+<form (submit)="onSubmit()">
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+  <ng-content></ng-content>
+  <custom-button type="submit" [text]="btnText"></custom-button>
+</form>
