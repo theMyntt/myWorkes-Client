@@ -4,6 +4,7 @@ import { FeaturesRoutingModule } from './features-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
 import { Eye, LucideAngularModule, Mail } from 'lucide-angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -12,6 +13,7 @@ import { Eye, LucideAngularModule, Mail } from 'lucide-angular';
     FeaturesRoutingModule,
     SharedModule,
     LucideAngularModule.pick({ Eye, Mail }),
+    ReactiveFormsModule,
   ],
 })
 export class FeaturesModule {}
