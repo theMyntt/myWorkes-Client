@@ -1,6 +1,9 @@
 <header>
   <h2>myWorkes <span id="version">&#64; 0.0.1</span></h2>
   @if (this.name) {
-  <p>{{ name | capitalize }}</p>
+  <custom-dropdown label="{{ name | capitalize }}">
+    <a href="home">Inicio</a>
+    <span style="color: red; cursor: pointer" (click)="logout()">Sair</span>
+  </custom-dropdown>
   }
 </header>

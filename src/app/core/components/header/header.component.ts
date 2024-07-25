@@ -14,4 +14,8 @@ export class HeaderComponent {
 
     if (name) this.name = name;
   }
+
+  logout() {
+    this.auth.logout();
+  }
 }
