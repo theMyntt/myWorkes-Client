@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="chevron">
+    <p (click)="updateDropdownState()">{{ label }}</p>
+    <lucide-icon name="chevron-down" />
+  </div>
+  @if (this.activeDropdown()) {
+  <div class="dropdown">
+    <ng-content></ng-content>
+  </div>
+  }
+</div>
