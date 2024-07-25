@@ -1,0 +1,10 @@
+<label [htmlFor]="id">{{ label }}</label>
+<div class="entry">
+  <input
+    class="input"
+    [id]="id"
+    [placeholder]="placeholder"
+    [formControl]="control"
+  />
+  <ng-content></ng-content>
+</div>
