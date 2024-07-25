@@ -1,0 +1,13 @@
+header {
+  padding: 40px;
+  background-color: #d3d3d3;
+  border-bottom: 4px solid #8b8b8b;
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    font-weight: 400;
+    span#version {
+      color: red;
+    }
+  }
+}
