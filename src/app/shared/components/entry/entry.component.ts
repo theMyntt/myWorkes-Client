@@ -19,7 +19,7 @@ export class EntryComponent {
   @Input()
   placeholder: string = '';
 
-  @Input()
+  @Input({ required: true })
   control!: FormControl;
 
   id: string;
