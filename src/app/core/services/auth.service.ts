@@ -24,7 +24,7 @@ export class AuthService {
         password,
       })
       .pipe(
-        catchError((err) => {
+        catchError((err: any) => {
           if (err.status == 404) {
             this.toastr.error('Usuário não encontrado', 'Erro!');
           }
@@ -40,7 +40,7 @@ export class AuthService {
       )
       .subscribe((response: any) => {
         this.cookieService.set('mwk:name', response.name);
-        this.cookieService.set('mwk:id', response.id);
+        this.cookieService.set('mwk:id', response.token);
 
         this.router.navigate(['/home']);
       });
