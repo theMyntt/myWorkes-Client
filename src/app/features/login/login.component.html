@@ -1,0 +1,18 @@
+<div class="login-component container">
+  <base-form
+    [onSubmit]="submit"
+    title="Faça login para continuar."
+    btnText="Fazer login"
+  >
+    <entry type="text" label="Email: " placeholder="johndoe@example.com">
+      <lucide-icon name="mail"></lucide-icon>
+    </entry>
+    <entry [type]="passwordType()" label="Senha: " placeholder="12345678">
+      <lucide-icon
+        name="eye"
+        (click)="changePasswordType()"
+        style="cursor: pointer"
+      ></lucide-icon>
+    </entry>
+  </base-form>
+</div>
