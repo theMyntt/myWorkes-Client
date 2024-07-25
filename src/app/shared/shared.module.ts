@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
+import { forwardRef, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ChevronDown, LucideAngularModule } from 'lucide-angular';
 import { EntryComponent } from './components/entry/entry.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { BaseFormComponent } from './components/base-form/base-form.component';
+import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { ButtonComponent } from './components/button/button.component';
     CapitalizePipe,
     DropdownComponent,
     EntryComponent,
-    BaseFormComponent,
     ButtonComponent,
   ],
   imports: [
@@ -21,12 +19,6 @@ import { ButtonComponent } from './components/button/button.component';
     LucideAngularModule.pick({ ChevronDown }),
     ReactiveFormsModule,
   ],
-  exports: [
-    CapitalizePipe,
-    DropdownComponent,
-    EntryComponent,
-    BaseFormComponent,
-    ButtonComponent,
-  ],
+  exports: [CapitalizePipe, DropdownComponent, EntryComponent, ButtonComponent],
 })
 export class SharedModule {}
