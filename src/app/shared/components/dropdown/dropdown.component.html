@@ -1,6 +1,6 @@
 <div class="content">
-  <div class="chevron">
-    <p (click)="updateDropdownState()">{{ label }}</p>
+  <div class="chevron" (click)="updateDropdownState()">
+    <p>{{ label }}</p>
     <lucide-icon name="chevron-down" />
   </div>
   @if (this.activeDropdown()) {
