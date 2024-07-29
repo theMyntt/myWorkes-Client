@@ -1,0 +1,34 @@
+<div class="overlay"></div>
+<div class="dialog">
+  <lucide-icon name="circle-x" color="#8b8b8b" (click)="close()" />
+  <form [formGroup]="userForm">
+    <entry
+      type="text"
+      [control]="userForm.controls.name"
+      label="Nome: "
+    ></entry>
+    <entry
+      type="text"
+      [control]="userForm.controls.email"
+      label="Email: "
+    ></entry>
+
+    <entry
+      type="text"
+      [control]="userForm.controls.phone"
+      label="Telefone: "
+    ></entry>
+
+    <div style="display: block">
+      <label for="type">Tipo de funcionário: </label>
+      <select [formControl]="userForm.controls.type" name="type">
+        <option value="0">Funcionário</option>
+        <option value="1">Cliente</option>
+        <option value="2">Administrador</option>
+        <option value="3">Terceiro</option>
+      </select>
+    </div>
+
+    <custom-button type="submit" text="Salvar"></custom-button>
+  </form>
+</div>
