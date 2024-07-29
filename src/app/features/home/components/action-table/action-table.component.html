@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th data-label="Name">Nome</th>
+      <th data-label="Email">Email</th>
+      <th data-label="Phone">Telefone</th>
+      <th data-label="Type">Tipo</th>
+      <th data-label="CreatedAt">Criado em</th>
+      <th data-label="More"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of table(); trackBy: trackById">
+      <td>{{ element.name | capitalize }}</td>
+      <td>{{ element.email }}</td>
+      <td>{{ element.phone }}</td>
+      <td>{{ element.type | employeerfunc }}</td>
+      <td>{{ element.createdAt | date }}</td>
+      <td>
+        <custom-button
+          text="Detalhes"
+          (click)="onOpenDialog(element)"
+        ></custom-button>
+      </td>
+    </tr>
+  </tbody>
+</table>
