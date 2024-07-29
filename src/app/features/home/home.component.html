@@ -1,0 +1,11 @@
+<div class="home-component container">
+  <action-table
+    [table]="table"
+    (openDialog)="handleOpenDialog($event)"
+  ></action-table>
+  <action-dialog
+    *ngIf="selectedItem"
+    [info]="selectedItem"
+    (closeDialog)="closeDialog($event)"
+  ></action-dialog>
+</div>
