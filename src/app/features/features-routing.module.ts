@@ -8,10 +8,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    title: 'Login | myWorkes @ 0.0.1',
   },
   {
     path: 'home',
     component: HomeComponent,
+    title: 'Inicio | myWorkes @ 0.0.1',
     canActivate: [AuthGuard],
   },
   {
