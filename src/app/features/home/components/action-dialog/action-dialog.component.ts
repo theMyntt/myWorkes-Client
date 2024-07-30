@@ -7,7 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IHomeResponse } from '../../home.component';
+import { IHomeResponse, IUserResponse } from '../../home.component';
 import { EEmployeer } from '../../../../types/employeer.type';
 
 @Component({
@@ -17,10 +17,10 @@ import { EEmployeer } from '../../../../types/employeer.type';
 })
 export class ActionDialogComponent implements OnChanges {
   @Input({ required: true })
-  info!: IHomeResponse;
+  info!: IUserResponse;
 
   @Output()
-  closeDialog = new EventEmitter<IHomeResponse>();
+  closeDialog = new EventEmitter<IUserResponse>();
 
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required]),

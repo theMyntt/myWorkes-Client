@@ -2,7 +2,7 @@ import { Component, signal, WritableSignal } from '@angular/core';
 import { HomeService } from '../../apis/home.service';
 import { EEmployeer } from '../../types/employeer.type';
 
-export interface IHomeResponse {
+export interface IUserResponse {
   name: string;
   email: string;
   phone: string;
@@ -14,29 +14,37 @@ export interface IHomeResponse {
   updatedAt: Date;
 }
 
+export interface IHomeResponse {
+  users: Array<IUserResponse>;
+  page: number;
+  pages: number;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  table: WritableSignal<Array<IHomeResponse>> = signal([]);
+  table: WritableSignal<IHomeResponse> = signal({
+    users: [],
+    page: 0,
+    pages: 0,
+  });
 
-  tableData: IHomeResponse[] = this.table();
-  selectedItem: IHomeResponse | null = null;
+  tableData: Array<IUserResponse> = this.table().users;
+  selectedItem: IUserResponse | null = null;
 
   constructor(private readonly service: HomeService) {
     const data$ = service.getAllEmployees(1);
-    data$.subscribe((response: Array<IHomeResponse>) =>
-      this.table.set(response)
-    );
+    data$.subscribe((response: IHomeResponse) => this.table.set(response));
   }
 
-  handleOpenDialog(item: IHomeResponse): void {
+  handleOpenDialog(item: IUserResponse): void {
     this.selectedItem = item;
   }
 
-  closeDialog(item: IHomeResponse): void {
+  closeDialog(item: IUserResponse): void {
     this.selectedItem = null;
   }
 }

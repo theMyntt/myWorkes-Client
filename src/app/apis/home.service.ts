@@ -10,7 +10,7 @@ export class HomeService {
   constructor(private readonly http: HttpClient) {}
 
   getAllEmployees(page: number) {
-    return this.http.get<Array<IHomeResponse>>(
+    return this.http.get<IHomeResponse>(
       `${DEVENV.API_URL}/api/employee/get?limit=10&page=${page}`
     );
   }

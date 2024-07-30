@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let element of table(); trackBy: trackById">
+    <tr *ngFor="let element of table().users; trackBy: trackById">
       <td>{{ element.name | capitalize }}</td>
       <td>{{ element.email }}</td>
       <td>{{ element.phone }}</td>

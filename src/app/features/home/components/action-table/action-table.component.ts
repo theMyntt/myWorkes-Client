@@ -5,7 +5,7 @@ import {
   Output,
   WritableSignal,
 } from '@angular/core';
-import { IHomeResponse } from '../../home.component';
+import { IHomeResponse, IUserResponse } from '../../home.component';
 
 @Component({
   selector: 'action-table',
@@ -15,16 +15,16 @@ import { IHomeResponse } from '../../home.component';
 })
 export class ActionTableComponent {
   @Input({ required: true })
-  table!: WritableSignal<Array<IHomeResponse>>;
+  table!: WritableSignal<IHomeResponse>;
 
   @Output()
-  openDialog = new EventEmitter<IHomeResponse>();
+  openDialog = new EventEmitter<IUserResponse>();
 
-  trackById(index: number, item: IHomeResponse): string {
+  trackById(index: number, item: IUserResponse): string {
     return item.id;
   }
 
-  onOpenDialog(item: IHomeResponse): void {
+  onOpenDialog(item: IUserResponse): void {
     this.openDialog.emit(item);
   }
 }
