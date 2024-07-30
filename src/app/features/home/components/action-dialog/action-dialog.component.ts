@@ -25,6 +25,10 @@ export class ActionDialogComponent implements OnChanges {
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.email, Validators.required]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(8),
+    ]),
     phone: new FormControl('', [Validators.required]),
     type: new FormControl<EEmployeer>(0, [Validators.required]),
     allowedSystems: new FormControl(<string[]>[], [Validators.required]),
@@ -35,6 +39,7 @@ export class ActionDialogComponent implements OnChanges {
       this.userForm.patchValue({
         allowedSystems: this.info.allowedSystems,
         email: this.info.email,
+        password: this.info.password,
         name: this.info.name,
         phone: this.info.phone,
         type: this.info.type,
